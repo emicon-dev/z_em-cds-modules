@@ -1,0 +1,97 @@
+{
+    "default": [
+        {"class":[0, 0],     "text":"[DEFAULT] ООО Пролог"   },
+        {"class":[1, 9],     "text":"[DEFAULT] Алексеев А.В."},
+        {"class":[10, 99],   "text":"[DEFAULT] Лучин Е.В."   },
+        {"class":[100, 149], "text":"[DEFAULT] Матросов Д.П."},
+        {"class":[150, 255], "text":"[DEFAULT] резерв"       },
+    ]
+
+    "severities": [
+        {"severity":0, "text":"[EMERGENCY]"},
+        {"severity":1, "text":"[ALERT]    "},
+        {"severity":2, "text":"[CRITICAL] "},
+        {"severity":3, "text":"[ERROR]    "},
+        {"severity":4, "text":"[WARNING]  "},
+        {"severity":5, "text":"[NOTICE]   "},
+        {"severity":6, "text":"[INFO]     "},
+        {"severity":7, "text":"[DEBUG]    "},
+    ],
+
+    "classes": [
+        {"class":100, "text":"[App]        "},
+        {"class":101, "text":"[CfgReader]  "},
+        {"class":102, "text":"[CmdQueue]   "},
+        {"class":103, "text":"[Connection] "},
+        {"class":104, "text":"[ControlStat]"},
+        {"class":105, "text":"[DataBlock]  "},
+        {"class":106, "text":"[Debug]      "},
+        {"class":107, "text":"[DiagByte]   "},
+        {"class":108, "text":"[Iec104App]  "},
+        {"class":109, "text":"[Iec104Slave]"},
+        {"class":110, "text":"[IecAbonent] "},
+        {"class":111, "text":"[MpsaAbonent]"},
+        {"class":112, "text":"[Server]     "},
+        {"class":113, "text":"[SocketManag]"},
+        {"class":114, "text":""             },
+        {"class":115, "text":"[SysTime]    "},
+        {"class":116, "text":"[Telecontrol]"},
+        {"class":117, "text":"[UpdateEvent]"},
+        {"class":118, "text":"[SyncSource] "},
+    ],
+
+    "events": [
+        {"class":0, "event":0, "text":"[      ] Очистка буфера"},
+        {"class":0, "event":1, "text":"[      ] Останов МЭК приложения"},
+        {"class":0, "event":2, "text":"[      ] Запуск МЭК приложения"},
+        {"class":101, "event":0, "text":"[      ] Конфигурационный файл - %s", "argToInsert":[0,1]},
+ 
+        {"class":102, "event":0, "text":"[0x%04x] Попытка дополнить заполненный буфер", "arg":[0,2]},
+
+        {"class":106, "event":0, "text":"[      ] 'debug_telecontrol' - %s", "argToInsert":[0,1]},
+
+        {"class":109, "event":0, "text":"[0x%04x] Неработоспособный сокет", "arg":[0,2]},
+        {"class":109, "event":1, "text":"[0x%04x] Нарушенная последовательность APDU", "arg":[0,2]},
+        {"class":109, "event":2, "text":"[0x%04x] Сработал таймер 1", "arg":[0,2]},
+        {"class":109, "event":3, "text":"[0x%04x] Неадекватный APCI", "arg":[0,2]},
+        {"class":109, "event":4, "text":"[0x%04x] Неправильный стартовый символ APDU", "arg":[0,2]},
+        {"class":109, "event":5, "text":"[0x%04x] Неправильная длина APDU", "arg":[0,2]},
+        {"class":109, "event":6, "text":"[0x%04x] Отправлен APDU", "arg":[0,2]},
+        {"class":109, "event":7, "text":"         Формат I (%d,%d)", "arg":[0,2], "arg":[2,2]},
+
+        {"class":112, "event":0, "text":"[0x%04x] Неудачная попытка создать соединение", "arg":[0,2]},
+        {"class":112, "event":1, "text":"[0x%04x] Запрос на установление соединения", "arg":[0,2]},
+        {"class":112, "event":2, "text":"[0x%04x] Установлено соединение c ПУ [0x%04x]", "arg":[0,2], "arg":[2,2]},
+        {"class":112, "event":3, "text":"[0x%04x] Разорвано соединение c ПУ [0x%04x]", "arg":[0,2], "arg":[2,2]},
+ 
+        {"class":114, "event":0, "text":"%s [0x%04x] Неудачная инициализация", "argToClass":[0,1], "arg":[1,2]},
+        {"class":114, "event":1, "text":"%s [0x%04x] Неудачная итерация", "argToClass":[0,1], "arg":[1,2]},
+        {"class":114, "event":2, "text":"%s [0x%04x] Непредвиденная ситуация - %d", "argToClass":[0,1], "arg":[1,2], "arg":[3,1]},
+        {"class":114, "event":3, "text":"%s [0x%04x] Успешная инициализация", "argToClass":[0,1], "arg":[1,2]},
+        {"class":114, "event":4, "text":"         Некорректное событие: class - %s, event - %d", "argToClass":[0,1], "arg":[1,1]},
+        {"class":114, "event":5, "text":"         IP - %d.%d.%d.%d", "arg":[0,1], "arg":[1,1], "arg":[2,1], "arg":[3,1]},
+        {"class":114, "event":6, "text":"%s [0x%04x] Дин.память - %s", "argToClass":[0,1], "arg":[1,2], "argToInsert":[3,1]},
+        {"class":114, "event":7, "text":"         MemAlloc 0x%08x", "arg":[0,4]},
+        {"class":114, "event":8, "text":"         MemFree 0x%08x", "arg":[0,4]},
+        {"class":114, "event":9, "text":"         %s %s [0x%04x]", "argToInsert":[0,1], "argToClass":[1,1], "arg":[2,2]},
+
+        {"class":115, "event":0, "text":"[      ] Таймаут синхронизации"},
+        {"class":115, "event":1, "text":"[      ] Обновлено системное время от источника [0x%04x]", "arg":[0,2]},
+
+        {"class":116, "event":0, "text":"[      ] Уровень журналирования - %s", "argToSeverity":[0,1]},
+
+        {"class":118, "event":0, "text":"[0x%04x] Таймаут синхронизации", "arg":[0,2]},
+        {"class":118, "event":1, "text":"[0x%04x] Получено синхр. время", "arg":[0,2]},
+    ],
+    
+    "inserts": [
+        {"insert":0, "text":"On"},
+        {"insert":1, "text":"Off"},
+        {"insert":2, "text":"Ok"},
+        {"insert":3, "text":"Fault"},
+        {"insert":4, "text":"Выделение"},
+        {"insert":5, "text":"Освобождение"},
+        {"insert":6, "text":"__NEW"},
+        {"insert":7, "text":"__DELETE"},
+    ]
+}
